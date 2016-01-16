@@ -34,10 +34,10 @@ feelinglucky = 'y'
 showmenow= 'y'
 bestguess = 1234567
 howmany = 2
-carpayments = 3
-jobhate =11
-minutestoleave =6
-averageIQofatrumpvoter = 50
+carpayments = 2
+jobhate =2
+minutestoleave =2
+averageIQofatrumpvoter = 2
 
 
 #where I convert the input into integers
@@ -105,14 +105,17 @@ numbergenerator(jobhate)
 numbergenerator(minutestoleave)
 numbergenerator(averageIQofatrumpvoter)
 
-def powerballvalidation():
-    lenlist = len(powerballlist)
-    if len(powerballlist) < 5:
-        calculated = len(powerballlist)
-    validation = 5-calculated
-    while validation <5:
+#print 'testing' , powerballlist
+
+def powerballvalidation(x):
+    lenlist = len(powerballlist)    
+    while lenlist <5:
         powerballlist.append(random.randrange(1,70))
-        validation + 1
+        lenlist = lenlist + 1
+    return powerballlist
+
+powerballvalidation(powerballlist)
+#print 'test2', powerballlist
     
  #sorts the list in numeric order like a powerball ticket       
 powerballlist.sort()
