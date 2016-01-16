@@ -84,9 +84,9 @@ powerballlist = []
 
 def powerballpicker():
     pb =  random.randint(1,27)
-    print str(pb)
+    return pb
 
-powerballvar = powerballpicker
+powerballvar = powerballpicker()
 
 #generate that random winner
 randomrandom = random.randrange(1,292000000)
@@ -110,8 +110,12 @@ numbergenerator(averageIQofatrumpvoter)
 def powerballvalidation(x):
     lenlist = len(powerballlist)    
     while lenlist <5:
-        powerballlist.append(random.randrange(1,70))
-        lenlist = lenlist + 1
+        generated = random.randrange(1,70)
+        if generated not in powerballlist :
+            powerballlist.append(generated)
+            lenlist = lenlist + 1
+        else :
+            lenlist = lenlist
     return powerballlist
 
 powerballvalidation(powerballlist)
@@ -121,7 +125,10 @@ powerballvalidation(powerballlist)
 powerballlist.sort()
 
 for i in powerballlist:
-    print 'power ball number' ,i
+    print  i
+
+
+print 'The powerball is:  ' , powerballvar
     
 
 
