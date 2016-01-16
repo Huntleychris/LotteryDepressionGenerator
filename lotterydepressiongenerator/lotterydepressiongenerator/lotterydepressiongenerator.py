@@ -8,36 +8,36 @@ import random
 
 
 #for masochists who want to count to 292000000 choose y
-#wanttowatch = raw_input('Do you want to watch it work for a winner? (y/n)  ')
+wanttowatch = raw_input('Do you want to watch it work for a winner? (y/n)  ')
 
-##will get you those lucky lucky numbers
-#feelinglucky = raw_input('do you want some winning numbers? (y/n):  ')
+#will get you those lucky lucky numbers
+feelinglucky = raw_input('do you want some winning numbers? (y/n):  ')
 
-##to show the generated number against your guess choose y
-#showmenow =raw_input('Do you want to see your guess compared to the winner (y/n):  ')
+#to show the generated number against your guess choose y
+showmenow =raw_input('Do you want to see your guess compared to the winner (y/n):  ')
 
-##the 1 in 292000000 chance
-#bestguess = raw_input('Enter in a whole number between 1 and 292000000: ' )
+#the 1 in 292000000 chance
+bestguess = raw_input('Enter in a whole number between 1 and 292000000: ' )
 
 #I gotta get some input to make this thing somewhat interesting
-#howmany = raw_input('How many powerball tickets did you buy for the billion dollar drawing?  '  )
-#carpayments = raw_input('How many car payments do you have left?  ' )
-#jobhate = raw_input ('how many times have you said I hate my job today? (whole number): ')
-#minutestoleave = raw_input('How many minutes would it take for you to get the hell out of town if you won the lottery:  ' )
-#averageIQofatrumpvoter = raw_input('What do you think the average trump supporter has for an IQ:  ')
+howmany = raw_input('How many powerball tickets did you buy for the billion dollar drawing?  '  )
+carpayments = raw_input('How many car payments do you have left?  ' )
+jobhate = raw_input ('how many times have you said I hate my job today? (whole number): ')
+minutestoleave = raw_input('How many minutes would it take for you to get the hell out of town if you won the lottery:  ' )
+averageIQofatrumpvoter = raw_input('What do you think the average trump supporter has for an IQ:  ')
 
 
 
-#test information
-wanttowatch = 'n'
-feelinglucky = 'y'
-showmenow= 'y'
-bestguess = 1234567
-howmany = 2
-carpayments = 2
-jobhate =2
-minutestoleave =2
-averageIQofatrumpvoter = 2
+##test information
+#wanttowatch = 'n'
+#feelinglucky = 'y'
+#showmenow= 'y'
+#bestguess = 1234567
+#howmany = 2
+#carpayments = 2
+#jobhate =2
+#minutestoleave =2
+#averageIQofatrumpvoter = 2
 
 
 #where I convert the input into integers
@@ -125,7 +125,7 @@ for i in powerballlist:
     
 
 
-if showmenow == 'Y' or 'y':
+if showmenow ==  'y':
     print 'The winning guess:  ' , randomrandom 
     print 'Your guess: ', bestguess
 else:
@@ -138,7 +138,7 @@ if wanttowatch == 'y':
     for i in xrange(1,292000000):
         if randomrandom == bestguess:
             print 'winner winner chicken dinner'
-        elif i == x:
+        elif i == randomrandom:
             print 'random dude wins'
         else:
             print 'nope ' + str(i)
