@@ -8,24 +8,23 @@ import random
 
 
 #for masochists who want to count to 292000000 choose y
-wanttowatch = raw_input('Do you want to watch it work for a winner? (y/n)  ')
+wanttowatch = input('Do you want to watch it work for a winner? (y/n)  ')
 
 #will get you those lucky lucky numbers
-feelinglucky = raw_input('do you want some winning numbers? (y/n):  ')
+feelinglucky = input('do you want some winning numbers? (y/n):  ')
 
 #to show the generated number against your guess choose y
-showmenow =raw_input('Do you want to see your guess compared to the winner (y/n):  ')
+showmenow =input('Do you want to see your guess compared to the winner (y/n):  ')
 
 #the 1 in 292000000 chance
-bestguess = raw_input('Enter in a whole number between 1 and 292000000: ' )
+bestguess = input('Enter in a whole number between 1 and 292000000: ' )
 
 #I gotta get some input to make this thing somewhat interesting
-howmany = raw_input('How many powerball tickets did you buy for the billion dollar drawing?  '  )
-carpayments = raw_input('How many car payments do you have left?  ' )
-jobhate = raw_input ('how many times have you said I hate my job today? (whole number): ')
-minutestoleave = raw_input('How many minutes would it take for you to get the hell out of town if you won the lottery:  ' )
-averageIQofatrumpvoter = raw_input('What do you think the average trump supporter has for an IQ:  ')
-
+howmany = input('How many powerball tickets did you buy for the billion dollar drawing?(between 1 and 69)'  )
+carpayments = input('How many car payments do you have left? (between 1 and 69 and if its higher you serious need financial help)' )
+jobhate = input ('how many times have you said I hate my job today? (whole number between 1 and 69): ')
+minutestoleave = input('How many minutes would it take for you to get the hell out of town if you won the lottery(between 1 and 69):  ' )
+averageIQofatrumpvoter = input('What do you think the average trump supporter has for an IQ (as guessed between 1 and 69):  ')
 
 
 ##test information
@@ -41,38 +40,38 @@ averageIQofatrumpvoter = raw_input('What do you think the average trump supporte
 
 
 #where I convert the input into integers
-#I could have used variable = int(raw_input('stuff here') but I wanted to provide feedback as to what went wrong
+#I could have used variable = int(input('stuff here') but I wanted to provide feedback as to what went wrong
 try:
     
     bestguess = int(bestguess)
     bestguess <= 292000000 and bestguess > 0
 except: 
-    print 'You need a whole number between 1 and 292000000 what went wrong here'
+    print('You need a whole number between 1 and 292,201,338 what went wrong here between 1 and 69')
 
 try:
     int(howmany)
 except:
-    print 'how many powerball tickets should be a whole number'
+    print('how many powerball tickets should be a whole number between 1 and 69')
 
 try:
     int(carpayments)
 except:
-    print 'car payments should be a whole number'
+    print('car payments should be a whole number between 1 and 69')
 
 try:
     int(jobhate)
 except:
-    print 'how much you hate your job should be a whole number'
+    print('how much you hate your job should be a whole number between 1 and 69')
 
 try:
     int(minutestoleave)
 except:
-    print 'how many minutes it takes to leave should be a whole number'
+    print('how many minutes it takes to leave should be a whole number between 1 and 69')
 
 try:
     int(averageIQofatrumpvoter)
 except:
-    print 'the average IQ of a trump voter should still be a whole number'
+    print('the average IQ of a trump voter should still be a whole number between 1 and 69 also an accurate range)
 
 #reducing the y/n inputs into lower case
 wanttowatch = wanttowatch.lower()
@@ -125,18 +124,18 @@ powerballvalidation(powerballlist)
 powerballlist.sort()
 
 for i in powerballlist:
-    print  i
+    print (i)
 
 
-print 'The powerball is:  ' , powerballvar
+print('The powerball is:  ' , powerballvar)
     
 
 
 if showmenow ==  'y':
-    print 'The winning guess:  ' , randomrandom 
-    print 'Your guess: ', bestguess
+    print('The winning guess:  ' , randomrandom )
+    print('Your guess: ', bestguess)
 else:
-    print ''
+    print('')
 
 
 #watch and weep
@@ -144,10 +143,10 @@ else:
 if wanttowatch == 'y':
     for i in xrange(1,292000000):
         if randomrandom == bestguess:
-            print 'winner winner chicken dinner'
+            print('winner winner chicken dinner')
         elif i == randomrandom:
-            print 'random dude wins'
+            print('random dude wins')
         else:
-            print 'nope ' + str(i)
+            print('nope ' + str(i))
 else:
-    print 'seriously, good choice counting to 292,000,000 would be depressing as hell'
+    print('seriously, good choice counting to 292,201,338 would be depressing as hell')
