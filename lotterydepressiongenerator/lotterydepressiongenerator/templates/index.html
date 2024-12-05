@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Simulator</title>
+</head>
+<body>
+    <h1>Lottery Simulator</h1>
+    <form method="POST">
+        <label>Do you want to watch it work for a winner? (y/n):</label>
+        <input type="text" name="want_to_watch" required><br><br>
+
+        <label>Do you want some winning numbers? (y/n):</label>
+        <input type="text" name="feeling_lucky" required><br><br>
+
+        <label>Do you want to see your guess compared to the winner? (y/n):</label>
+        <input type="text" name="show_me_now" required><br><br>
+
+        <label>Enter a whole number between 1 and 292,000,000:</label>
+        <input type="number" name="best_guess" min="1" max="292000000" required><br><br>
+
+        <label>How many Powerball tickets did you buy? (1-69):</label>
+        <input type="number" name="how_many" min="1" max="69" required><br><br>
+
+        <label>How many car payments do you have left? (1-69):</label>
+        <input type="number" name="car_payments" min="1" max="69" required><br><br>
+
+        <label>How many times have you said "I hate my job" today? (1-69):</label>
+        <input type="number" name="job_hate" min="1" max="69" required><br><br>
+
+        <label>How many minutes would it take to leave town if you won? (1-69):</label>
+        <input type="number" name="minutes_to_leave" min="1" max="69" required><br><br>
+
+        <label>What do you think the average coworker's IQ is? (1-69):</label>
+        <input type="number" name="avg_iq_ofcoworkers" min="1" max="69" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

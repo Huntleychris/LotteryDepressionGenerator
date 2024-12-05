@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Lottery Results</h1>
+    <p>Your Powerball numbers are: {{ results['powerball_numbers'] }}</p>
+    <p>The Powerball is: {{ results['powerball'] }}</p>
+
+    {% if results['show_me_now'] == 'y' %}
+        <p>Your guess: {{ results['best_guess'] }}</p>
+        <p>The winning number: {{ results['winning_number'] }}</p>
+    {% endif %}
+
+    {% if results['want_to_watch'] == 'y' %}
+        <p>Good choice not to watch; it would have been depressing to count to 292,000,000.</p>
+    {% endif %}
+</body>
+</html>

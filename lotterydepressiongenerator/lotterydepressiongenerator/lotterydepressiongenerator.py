@@ -1,152 +1,81 @@
-#Python lottery depression generator.
-#it will show you how hard it is to simply guess a number between 1 and 292000000
-#it will let you watch the eventual winner be picked via a scrol
-#it will make you sad
-
-#imports random to allow for the generators
 import random
 
+# Function to validate integer inputs within a range
+def get_int_input(prompt, min_val, max_val):
+    while True:
+        try:
+            value = int(input(prompt))
+            if min_val <= value <= max_val:
+                return value
+            else:
+                print(f"Please enter a number between {min_val} and {max_val}.")
+        except ValueError:
+            print("Invalid input. Please enter a whole number.")
 
-#for masochists who want to count to 292000000 choose y
-wanttowatch = input('Do you want to watch it work for a winner? (y/n)  ')
-
-#will get you those lucky lucky numbers
-feelinglucky = input('do you want some winning numbers? (y/n):  ')
-
-#to show the generated number against your guess choose y
-showmenow =input('Do you want to see your guess compared to the winner (y/n):  ')
-
-#the 1 in 292000000 chance
-bestguess = input('Enter in a whole number between 1 and 292000000: ' )
-
-#I gotta get some input to make this thing somewhat interesting
-howmany = input('How many powerball tickets did you buy for the billion dollar drawing?(between 1 and 69)'  )
-carpayments = input('How many car payments do you have left? (between 1 and 69 and if its higher you serious need financial help)' )
-jobhate = input ('how many times have you said I hate my job today? (whole number between 1 and 69): ')
-minutestoleave = input('How many minutes would it take for you to get the hell out of town if you won the lottery(between 1 and 69):  ' )
-averageIQofatrumpvoter = input('What do you think the average trump supporter has for an IQ (as guessed between 1 and 69):  ')
-
-
-##test information
-#wanttowatch = 'n'
-#feelinglucky = 'y'
-#showmenow= 'y'
-#bestguess = 1234567
-#howmany = 2
-#carpayments = 2
-#jobhate =2
-#minutestoleave =2
-#averageIQofatrumpvoter = 2
-
-
-#where I convert the input into integers
-#I could have used variable = int(input('stuff here') but I wanted to provide feedback as to what went wrong
-try:
-    
-    bestguess = int(bestguess)
-    bestguess <= 292000000 and bestguess > 0
-except: 
-    print('You need a whole number between 1 and 292,201,338 what went wrong here between 1 and 69')
-
-try:
-    int(howmany)
-except:
-    print('how many powerball tickets should be a whole number between 1 and 69')
-
-try:
-    int(carpayments)
-except:
-    print('car payments should be a whole number between 1 and 69')
-
-try:
-    int(jobhate)
-except:
-    print('how much you hate your job should be a whole number between 1 and 69')
-
-try:
-    int(minutestoleave)
-except:
-    print('how many minutes it takes to leave should be a whole number between 1 and 69')
-
-try:
-    int(averageIQofatrumpvoter)
-except:
-    print('the average IQ of a trump voter should still be a whole number between 1 and 69 also an accurate range)
-
-#reducing the y/n inputs into lower case
-wanttowatch = wanttowatch.lower()
-feelinglucky = feelinglucky.lower()
-showmenow = showmenow.lower()
-
-#the list to store the joy
-powerballlist = []
-
-def powerballpicker():
-    pb =  random.randint(1,27)
-    return pb
-
-powerballvar = powerballpicker()
-
-#generate that random winner
-randomrandom = random.randrange(1,292000000)
-
-def numbergenerator(inti):
-    if inti <= 69:
-        if inti not in powerballlist:
-            powerballlist.append(inti)
-    else:
-        z = random.randrange(1,70)
-        powerballlist.append(z)
-
-numbergenerator(howmany)
-numbergenerator(carpayments)
-numbergenerator(jobhate)
-numbergenerator(minutestoleave)
-numbergenerator(averageIQofatrumpvoter)
-
-#print 'testing' , powerballlist
-
-def powerballvalidation(x):
-    lenlist = len(powerballlist)    
-    while lenlist <5:
-        generated = random.randrange(1,70)
-        if generated not in powerballlist :
-            powerballlist.append(generated)
-            lenlist = lenlist + 1
-        else :
-            lenlist = lenlist
-    return powerballlist
-
-powerballvalidation(powerballlist)
-#print 'test2', powerballlist
-    
- #sorts the list in numeric order like a powerball ticket       
-powerballlist.sort()
-
-for i in powerballlist:
-    print (i)
-
-
-print('The powerball is:  ' , powerballvar)
-    
-
-
-if showmenow ==  'y':
-    print('The winning guess:  ' , randomrandom )
-    print('Your guess: ', bestguess)
-else:
-    print('')
-
-
-#watch and weep
-
-if wanttowatch == 'y':
-    for i in xrange(1,292000000):
-        if randomrandom == bestguess:
-            print('winner winner chicken dinner')
-        elif i == randomrandom:
-            print('random dude wins')
+# Function to validate yes/no inputs
+def get_yes_no_input(prompt):
+    while True:
+        response = input(prompt).strip().lower()
+        if response in ['y', 'n']:
+            return response
         else:
-            print('nope ' + str(i))
+            print("Please enter 'y' for yes or 'n' for no.")
+
+# Get inputs from the user
+want_to_watch = get_yes_no_input('Do you want to watch it work for a winner? (y/n): ')
+feeling_lucky = get_yes_no_input('Do you want some winning numbers? (y/n): ')
+show_me_now = get_yes_no_input('Do you want to see your guess compared to the winner? (y/n): ')
+best_guess = get_int_input('Enter a whole number between 1 and 292,000,000: ', 1, 292_000_000)
+how_many = get_int_input('How many Powerball tickets did you buy for the billion-dollar drawing? (1-69): ', 1, 69)
+car_payments = get_int_input('How many car payments do you have left? (1-69): ', 1, 69)
+job_hate = get_int_input('How many times have you said "I hate my job" today? (1-69): ', 1, 69)
+minutes_to_leave = get_int_input('How many minutes would it take for you to leave town if you won? (1-69): ', 1, 69)   
+avg_iq_ofcoworkers = get_int_input('What do you think the average IQ of a coworker is? (1-69):', 1, 69)
+
+
+# Generate Powerball numbers
+def generate_powerball_numbers(inputs):
+    powerball_numbers = set()
+    for number in inputs:
+        if number <= 69:
+            powerball_numbers.add(number)
+    while len(powerball_numbers) < 5:
+        powerball_numbers.add(random.randint(1, 69))
+    return sorted(powerball_numbers)
+
+# Get the Powerball value (1-27)
+def generate_powerball():
+    return random.randint(1, 27)
+
+# Generate the winning number
+def generate_winning_number():
+    return random.randint(1, 292_000_000)
+
+# Prepare inputs for Powerball number generation
+inputs = [how_many, car_payments, job_hate, minutes_to_leave, avg_iq_ofcoworkers]
+powerball_numbers = generate_powerball_numbers(inputs)
+powerball = generate_powerball()
+winning_number = generate_winning_number()
+
+# Display the Powerball ticket
+print("\nYour Powerball numbers are:")
+print(*powerball_numbers)
+print(f"The Powerball is: {powerball}")
+
+# Show the user's guess compared to the winning number
+if show_me_now == 'y':
+    print(f"Your guess: {best_guess}")
+    print(f"The winning number: {winning_number}")
+
+# Simulate the process of finding a winner
+if want_to_watch == 'y':
+    print("\nWatching the draw...")
+    for i in range(1, 292_000_001):
+        if i == winning_number:
+            print("Random person wins! The winning number is:", i)
+            break
+        elif i == best_guess:
+            print("You win! The winning number is:", i)
+            break
 else:
-    print('seriously, good choice counting to 292,201,338 would be depressing as hell')
+    print("\nGood choice not to watch; it would have been depressing to count to 292,000,000.")
